@@ -31,7 +31,7 @@ function convert(){
 for i in *.MP4;
     do name=`echo $i | cut -d'.' -f1`;
     echo $name;
-    ffmpeg -i $i -sameq -vcodec mpeg4 $name.mov;
+    ffmpeg -i $i -qscale 1 -vcodec mpeg4 $name.mov;
 done
 }
 
